@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "cd web && npm install && npm run build",
+  "outputDirectory": "web/dist",
   "builds": [
     {
       "src": "src/api/index.ts",
@@ -16,8 +18,19 @@
       "dest": "/src/api/index.ts"
     },
     {
+      "src": "/deployments",
+      "dest": "/src/api/index.ts"
+    },
+    {
       "src": "/status/(.*)",
       "dest": "/src/api/index.ts"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/web/dist/$1"
     }
   ]
 }
