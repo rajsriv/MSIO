@@ -1,5 +1,7 @@
 {
   "buildCommand": "cd web && npm install && npm run build",
   "outputDirectory": "web/dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "framework": null,
+  "devCommand": "cd web && npm run dev"
 }
