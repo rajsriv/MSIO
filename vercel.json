@@ -1,36 +1,5 @@
 {
-  "version": 2,
   "buildCommand": "cd web && npm install && npm run build",
   "outputDirectory": "web/dist",
-  "builds": [
-    {
-      "src": "src/api/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/view/(.*)",
-      "dest": "/src/api/index.ts"
-    },
-    {
-      "src": "/deploy",
-      "dest": "/src/api/index.ts"
-    },
-    {
-      "src": "/deployments",
-      "dest": "/src/api/index.ts"
-    },
-    {
-      "src": "/status/(.*)",
-      "dest": "/src/api/index.ts"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/web/dist/$1"
-    }
-  ]
+  "installCommand": "npm install"
 }

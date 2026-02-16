@@ -129,6 +129,12 @@ app.use('/view/:id', async (req: express.Request, res: express.Response) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`API Server running at http://localhost:${port}`);
-});
+// Export for Vercel serverless
+export default app;
+
+// Only listen if not in serverless environment
+if (process.env.VERCEL !== '1') {
+  app.listen(port, () => {
+    console.log(`API Server running at http://localhost:${port}`);
+  });
+}
