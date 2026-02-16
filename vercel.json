@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/view/(.*)",
+      "dest": "/src/api/index.ts"
+    },
+    {
+      "src": "/deploy",
+      "dest": "/src/api/index.ts"
+    },
+    {
+      "src": "/status/(.*)",
+      "dest": "/src/api/index.ts"
+    }
+  ]
+}
